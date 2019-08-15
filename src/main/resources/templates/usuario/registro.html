@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/layout">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>Biblioteca</title>
+
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+
+</head>
+<body>
+<div layout:fragment="content" class="container">
+
+    <div class="row">
+
+        <div class="">
+
+            <div id="first">
+
+                <div class="myform form">
+
+                    <div class="logo mb-3">
+                        <div class="col-md-12 text-center">
+                            <h1>Registrar</h1>
+                        </div>
+                    </div>
+
+                    <form id="userForm" th:action="@{/registration}" th:object="${userForm}" action="#" method="post">
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                        <div class="form-group">
+                            <label for="username">Usuário</label>
+                            <input type="text" th:field="*{username}" id="username" name="username" class="form-control"
+                                   placeholder="Digite seu Usuário">
+                            <span class="text-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">
+								Nome Error
+							</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Senha</label>
+                            <input type="password" th:field="*{password}" id="password" name="password" class="form-control"
+                                   placeholder="Digite sua senha">
+                            <span class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Nome Error</span>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class=" btn btn-block btn-primary">Registrar</button>
+                        </div>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

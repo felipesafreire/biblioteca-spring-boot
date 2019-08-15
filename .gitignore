@@ -1,0 +1,24 @@
+logs/
+
+*.git.bkp
+
+#Eclipse
+.settings
+.classpath
+.project
+.metadata
+bin/
+
+#WebStorm e IntellijIDEA
+*.iml
+.idea/workspace.xml
+.idea/
+*.orig
+out/
+
+# Build do Gradlew
+/.gradle/
+*gradle/
+build/
+classes/
+target/
